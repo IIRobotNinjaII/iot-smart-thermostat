@@ -5,12 +5,12 @@
    
 2) Go to fabric-samples/test-network/ and run these commands
    Make sure you copied the go smart contract to the correct folder 
-   	```
-		./network.sh up createChannel -c mychannel -ca
+   ```
+   		./network.sh up createChannel -c mychannel -ca
     		./network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-go/ -ccl go
     		cd addOrg3
     		./addOrg3.sh up -c mychannel -ca
-    	```
+    ```
 
 3) Now let us run the rest api
    Replace the folder in /asset-transfer-basic/rest-api-go with the folder which has been included in this repo
