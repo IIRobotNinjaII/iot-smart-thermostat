@@ -1,5 +1,5 @@
 # iot-smart-thermostat
-
+WARNING : COPY EACH COMMAND LINE BY LINE
 1) Make a new folder called iot , cd into it and git clone this repo
    Make sure you copy the chaincode to the correct place
    
