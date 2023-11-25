@@ -53,14 +53,17 @@ const fetchData = async () => {
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching data:');
     }
 };
 
 setInterval(async () => {
     data = await fetchData();   
-    for (item of data){
-        await updateAssetData(item)
+    if(data){
+        for (item of data){
+            await updateAssetData(item)
+        }
     }
+
 
 }, 30000);

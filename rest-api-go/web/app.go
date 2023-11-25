@@ -21,9 +21,13 @@ type OrgSetup struct {
 }
 
 // Serve starts http web server.
-func Serve(setups OrgSetup) {
-	http.HandleFunc("/query", setups.Query)
-	http.HandleFunc("/invoke", setups.Invoke)
+func Serve(setup1 OrgSetup, setup2 OrgSetup,setup3 OrgSetup) {
+
+	http.HandleFunc("/query", setup1.Query)
+	http.HandleFunc("/invokeorg1", setup1.Invoke)
+	http.HandleFunc("/invokeorg2", setup2.Invoke)
+	http.HandleFunc("/invokeorg3", setup3.Invoke)
+	
 	fmt.Println("Listening (http://localhost:3000/)...")
 	if err := http.ListenAndServe(":3000", nil); err != nil {
 		fmt.Println(err)

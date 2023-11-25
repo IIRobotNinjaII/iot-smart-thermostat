@@ -16,10 +16,12 @@ serverUDP.on('message', processMessage);
 serverUDP.bind(portIPv6, hostIPv6);
 
 function processMessage(message, remote) {
+  // console.log(remote.address)
     if (!disableLogs)
         console.log('[UDP - IPv6] ' + new Date().toISOString() + ' ' + remote.address + ' Port:' + remote.port + ' - ' + message);
     let dataArray = message.toString().split('|')
     let id = dataArray[0].split(':')[1];
+    let org = dataArray[2].split(':')[5]
     let temp = parseInt(dataArray[3]);
     let hum = parseInt(dataArray[4]);
     let pm = parseInt(dataArray[5]);
@@ -27,10 +29,10 @@ function processMessage(message, remote) {
     let voc = parseInt(dataArray[7]); 
     let thermostat_on = parseInt(dataArray[8]); 
     let humidifier_on = parseInt(dataArray[9]); 
-    sendData(id,temp,hum,pm,co2,voc,thermostat_on,humidifier_on);
+    sendData(org,id,temp,hum,pm,co2,voc,thermostat_on,humidifier_on);
 }
-function sendData(id,temp,hum,pm,co2,voc,thermostat_on,humidifier_on) {
-  const url = 'http://localhost:3000/invoke';
+function sendData(org,id,temp,hum,pm,co2,voc,thermostat_on,humidifier_on) {
+  const url = 'http://localhost:3000/invokeorg'+org;
 
   const data = new URLSearchParams();
   data.append('channelid', 'mychannel');
