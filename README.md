@@ -20,3 +20,8 @@
 	run npm i
 	run npm start
 	```
+6)	```
+	cd chaincode/
+	run npm i
+	run node off-chain.js
+	```
