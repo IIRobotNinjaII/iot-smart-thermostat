@@ -6,6 +6,7 @@ WARNING : COPY EACH COMMAND LINE BY LINE
 2) Go to fabric-samples/test-network/ and run these commands
    Make sure you copied the go smart contract to the correct folder 
    ```
+   ./network.sh down
    ./network.sh up createChannel -c mychannel -ca
    ./network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-go/ -ccl go
    cd addOrg3
@@ -23,6 +24,7 @@ WARNING : COPY EACH COMMAND LINE BY LINE
 4) Let us run the blockchain-explorer now
    ```
    cd explorer/
+   docker-compose down
    export EXPLORER_CONFIG_FILE_PATH=./config.json
    export EXPLORER_PROFILE_DIR_PATH=./connection-profile
    export FABRIC_CRYPTO_PATH=/home/devika/hyp/fabric-samples/test-network/organizations #make sure this is set correctly
