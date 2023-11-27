@@ -30,7 +30,7 @@ WARNING : COPY EACH COMMAND LINE BY LINE
    export FABRIC_CRYPTO_PATH=/home/devika/hyp/fabric-samples/test-network/organizations #make sure this is set correctly
    filename=$(find $FABRIC_CRYPTO_PATH/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/  -type f -name '*sk')
    base_filename=$(basename "$filename")
-   sed -i 's|/tmp/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/\*sk|/tmp/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/'"$base_filename"'|' ./connection-profile/test-network.json
+   sed -i 's|/tmp/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/.*sk|/tmp/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/'"$base_filename"'|' ./connection-profile/test-network.json
    docker-compose up -d
    ```
    To login to dashboard, go to localhost:8080 these are username, password
