@@ -33,15 +33,17 @@ WARNING : COPY EACH COMMAND LINE BY LINE
    sed -i 's|/tmp/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/\*sk|/tmp/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/'"$base_filename"'|' ./connection-profile/test-network.json
    docker-compose up -d
    ```
-   To login to dashboardm go to localhost:8080 these are username, password
+   To login to dashboard, go to localhost:8080 these are username, password
+   ```
    "id": "exploreradmin",
    "password": "exploreradminpw"
+   ```
    
-5) Setup Cooja
+6) Setup Cooja
    Run Cooja and open the simulation file included in cooja/
    Create 3 tunslip instances and connect to all 3 border routers
    
-6) Run UDP server
+7) Run UDP server
    Run these commands
    ```
    cd server-udp/
@@ -49,14 +51,14 @@ WARNING : COPY EACH COMMAND LINE BY LINE
    node server.js
    ```
 
-7) Run Frontend
+8) Run Frontend
     ```
     cd frontend/
     npm i
     npm start
     ```
     
-8) Run Off Chain (Optional)
+9) Run Off Chain (Optional)
    ```
    cd off-chain/
    npm i
