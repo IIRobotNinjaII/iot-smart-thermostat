@@ -31,6 +31,9 @@ WARNING : COPY EACH COMMAND LINE BY LINE
    sed -i 's|/tmp/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/\*sk|/tmp/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/'"$base_filename"'|' ./connection-profile/test-network.json
    docker-compose up -d
    ```
+   To login to dashboardm go to localhost:8080 these are username, password
+   "id": "exploreradmin",
+   "password": "exploreradminpw"
    
 5) Setup Cooja
    Run Cooja and open the simulation file included in cooja/
