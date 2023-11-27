@@ -8,7 +8,6 @@ import { useDataContext } from "../data/DataContext";
 const Starter = () => {
   const { id } = useParams();
   const { data } = useDataContext();
-  console.log(data)
   if (!data) {
     return <div>Loading...</div>;
   }
