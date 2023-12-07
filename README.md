@@ -17,8 +17,8 @@ WARNING : COPY EACH COMMAND LINE BY LINE
    Replace the folder in /asset-transfer-basic/rest-api-go with the folder which has been included in this repo
    Then run these
    ```
-   run go mod download
-   run go run main.go
+   go mod download
+   go run main.go
    ```
 
 4) Let us run the blockchain-explorer now
